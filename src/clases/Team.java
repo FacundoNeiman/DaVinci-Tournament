@@ -6,9 +6,12 @@ public class Team {
     private String name;
     private ArrayList<Player> players;
 
+    public Team(String name){
+        setName(name);
+    }
+
     public void setName(String name){
         this.name = name;
-        return;
     }
 
     public String getName() {
@@ -16,7 +19,7 @@ public class Team {
     }
 
     public void addPlayer(Player player){
-        //this.players.add(player);
+        this.players.add(player);
     }
 
 }

@@ -9,15 +9,21 @@ public class Season {
     private Date startDate;
     private Date endDate;
 
+    public Season(String name, Date start, Date end){
+        setEndDate(end);
+        setName(name);
+        setStartDate(start);
+    }
+
     public ArrayList<Match> getMatchesByDate(Date date){
         return new ArrayList <Match> ();
     }
     public ArrayList <Match> addMatch(Match match){
+        this.matchs.add(match);
         return new ArrayList <Match> ();
     }
     public void setName (String name){
         this.name = name;
-        return;
     }
 
     public String getName (){
@@ -26,10 +32,8 @@ public class Season {
     //(Date) -> void
     public void setStartDate (Date startDate){
         this.startDate = startDate;
-        return ;
     }
     public void setEndDate (Date endDate){
         this.endDate = endDate;
-        return ;
     }
 }
