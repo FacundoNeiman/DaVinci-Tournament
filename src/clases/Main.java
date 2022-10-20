@@ -16,10 +16,7 @@ public class Main {
 
         Team estudiantesFC = new Team("Estudiantes DaVinci");
 
-        Date fechaEstimadaParcial = new Date();
-        fechaEstimadaParcial.setYear(2022);
-        fechaEstimadaParcial.setMonth(8); // sept
-        fechaEstimadaParcial.setDate(29);
+        Date fechaEstimadaParcial = new Date(2022, 8, 29);
         Match primerPartido = new Match("Open Gallo", fechaEstimadaParcial, estudiantesFC, profesoresPOO);
 
         torneoDaVinci.addMatch(primerPartido);
