@@ -9,11 +9,10 @@ public class Main {
         Date finDeCursada = new Date(2022,12,1);
         Season torneoDaVinci = new Season("Torneo DaVinci",comienzoDeCursada, finDeCursada);
 
-        System.out.println(torneoDaVinci);
-
-        /*Team profesoresPOO = new Team("Los Objetos");
+        Team profesoresPOO = new Team("Los Objetos");
         Player profeSergio = new Player("Sergio Medina", "Arquero", 0, 0);
         profesoresPOO.addPlayer(profeSergio);
+        System.out.println(profesoresPOO);
 
         Team estudiantesFC = new Team("Estudiantes DaVinci");
 
@@ -21,9 +20,9 @@ public class Main {
         fechaEstimadaParcial.setYear(2022);
         fechaEstimadaParcial.setMonth(8); // sept
         fechaEstimadaParcial.setDate(29);
-        Match primerPartido = new Match("Open Gallo", fechaEstimadaParcial, estudiantesFC, profesoresPOO, 2, 0);
+        Match primerPartido = new Match("Open Gallo", fechaEstimadaParcial, estudiantesFC, profesoresPOO);
 
-        torneoDaVinci.addMatch(primerPartido);*/
+        torneoDaVinci.addMatch(primerPartido);
 
     }
 }
