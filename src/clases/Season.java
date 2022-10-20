@@ -36,4 +36,19 @@ public class Season {
     public void setEndDate (Date endDate){
         this.endDate = endDate;
     }
+    public Date getEndDate() {
+        return endDate;
+    }
+    public Date getStartDate() {
+        return startDate;
+    }
+    @Override
+    public String toString() {
+        return "Season{" +
+                "matchs=" + matchs +
+                ", name='" + name + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
+    }
 }

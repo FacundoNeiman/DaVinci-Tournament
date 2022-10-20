@@ -59,4 +59,14 @@ public class Player {
     public void incrementMatchCounter(){
         this.matchCounter++;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", position='" + position + '\'' +
+                ", goalCounter=" + goalCounter +
+                ", matchCounter=" + matchCounter +
+                '}';
+    }
 }

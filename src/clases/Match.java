@@ -69,4 +69,15 @@ public class Match {
         this.visitantGoalCounter = visitantGoalCounter;
     }
 
+    @Override
+    public String toString() {
+        return "Match{" +
+                "location='" + location + '\'' +
+                ", date=" + date +
+                ", localTeam=" + localTeam +
+                ", visitantTeam=" + visitantTeam +
+                ", localGoalCounter=" + localGoalCounter +
+                ", visitantGoalCounter=" + visitantGoalCounter +
+                '}';
+    }
 }

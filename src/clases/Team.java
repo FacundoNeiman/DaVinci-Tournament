@@ -22,4 +22,11 @@ public class Team {
        this.players.add(player);
     }
 
+    @Override
+    public String toString() {
+        return "Team{" +
+                "name='" + name + '\'' +
+                ", players=" + players +
+                '}';
+    }
 }
