@@ -7,6 +7,7 @@ public class Team {
     private ArrayList<Player> players;
 
     public Team(String name){
+        players = new ArrayList<>();
         setName(name);
     }
 

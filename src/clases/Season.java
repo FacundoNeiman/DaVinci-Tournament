@@ -10,18 +10,15 @@ public class Season {
     private Date endDate;
 
     public Season(String name, Date start, Date end){
+        matchs = new ArrayList<>();
         setEndDate(end);
         setName(name);
         setStartDate(start);
     }
 
-    public ArrayList<Match> getMatchesByDate(Date date){
+    /*public ArrayList<Match> getMatchesByDate(Date date){
         return new ArrayList <Match> ();
-    }
-    public ArrayList <Match> addMatch(Match match){
-        this.matchs.add(match);
-        return new ArrayList <Match> ();
-    }
+    }*/
     public void setName (String name){
         this.name = name;
     }
@@ -41,6 +38,10 @@ public class Season {
     }
     public Date getStartDate() {
         return startDate;
+    }
+
+    public void addMatch(Match match){
+        this.matchs.add(match);
     }
     @Override
     public String toString() {

@@ -12,7 +12,6 @@ public class Main {
         Team profesoresPOO = new Team("Los Objetos");
         Player profeSergio = new Player("Sergio Medina", "Arquero", 0, 0);
         profesoresPOO.addPlayer(profeSergio);
-        System.out.println(profesoresPOO);
 
         Team estudiantesFC = new Team("Estudiantes DaVinci");
 
@@ -21,5 +20,7 @@ public class Main {
 
         torneoDaVinci.addMatch(primerPartido);
 
+
+        System.out.println(torneoDaVinci);
     }
 }
