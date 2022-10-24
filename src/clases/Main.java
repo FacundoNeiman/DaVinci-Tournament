@@ -28,8 +28,7 @@ public class Main {
         Match primerPartido = new Match("Open Gallo", fechaEstimadaParcial, estudiantesFC, profesoresPOO);
 
         torneoDaVinci.addMatch(primerPartido);
-
-
+        
         System.out.println(torneoDaVinci);
         System.out.println(primerPartido.getMarker());
     }
