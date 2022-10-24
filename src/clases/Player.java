@@ -5,12 +5,14 @@ public class Player {
     private String position;
     private int goalCounter;
     private int matchCounter;
+    private Team team;
 
     public Player(String name, String position, int goalCounter, int matchCounter){
         setGoalCounter(goalCounter);
         setMatchCounter(matchCounter);
         setName(name);
         setPosition(position);
+        team = null;
     }
 
     public void setName(String name){
@@ -45,6 +47,13 @@ public class Player {
         return;
     }
 
+    public Team getTeam(){
+        return this.team;
+    }
+
+    public void setTeam(Team team){
+        this.team = team;
+    }
 
     public void incrementGoalCounter(){
         //this.goalCounter = this.goalCounter + 1;

@@ -12,6 +12,7 @@ public class Main {
         Team profesoresPOO = new Team("Los Objetos");
         Player profeSergio = new Player("Sergio Medina", "Arquero", 0, 0);
         profesoresPOO.addPlayer(profeSergio);
+        profesoresPOO.addPlayer(new Player("Lautaro 'Perk' Chiappero" ,"Lateral Derecho", 1,5));
 
         Team estudiantesFC = new Team("Estudiantes DaVinci");
 

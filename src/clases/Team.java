@@ -20,7 +20,8 @@ public class Team {
     }
 
     public void addPlayer(Player player){
-       this.players.add(player);
+        player.setTeam(this);
+        this.players.add(player);
     }
 
     @Override
