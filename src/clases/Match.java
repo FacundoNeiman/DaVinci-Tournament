@@ -9,6 +9,7 @@ public class Match {
     private Team visitantTeam;
     private int localGoalCounter;
     private int visitantGoalCounter;
+    private boolean playing;
 
     public Match(String location, Date date, Team local, Team visitant){
         setDate(date);
@@ -17,19 +18,36 @@ public class Match {
         setVisitantGoalCounter(0);
         setLocalGoalCounter(0);
         setVisitantTeam(visitant);
+        this.playing = false;
     }
 
     public Match(Team local, Team visitant){
         setLocalTeam(local);
         setVisitantTeam(visitant);
+        this.playing = false;
     }
 
     public void makeAGoal(Team team, Player player){
-
+        //TODO
     }
 
     public void finishMatch(){
+        this.playing= false;
+    }
 
+    public void startMatch(){
+        this.playing = true;
+    }
+
+    public boolean isPlaying(){
+        return this.playing;
+    }
+
+    public String getMarker(){
+        return String.format("%s %d - %d %s",
+                this.localTeam.getName() ,this.getLocalCounter(),
+                this.getVisitantCounter(), this.visitantTeam.getName());
+        //return this.localGoalCounter + " - " + this.visitantGoalCounter;
     }
 
     public void setLocation(String location){
@@ -60,6 +78,9 @@ public class Match {
 
     public int getLocalCounter(){
         return this.localGoalCounter;
+    }
+    public int getVisitantCounter(){
+        return this.visitantGoalCounter;
     }
 
     public void setLocalGoalCounter(int localGoalCounter) {

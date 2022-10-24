@@ -31,5 +31,6 @@ public class Main {
 
 
         System.out.println(torneoDaVinci);
+        System.out.println(primerPartido.getMarker());
     }
 }
