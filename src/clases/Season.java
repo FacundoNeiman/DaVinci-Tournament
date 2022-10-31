@@ -41,6 +41,7 @@ public class Season {
     }
 
     public void addMatch(Match match){
+        match.startMatch();
         this.matchs.add(match);
     }
     @Override

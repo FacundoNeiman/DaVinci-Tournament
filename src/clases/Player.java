@@ -24,6 +24,10 @@ public class Player {
         this.goalCounter++;
     }
 
+    public void countMatch(){
+        this.matchCounter++;
+    }
+
     public String getName() {
         return this.name;
     }

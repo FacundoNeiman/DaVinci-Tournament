@@ -35,6 +35,9 @@ public class Match {
             this.visitantGoalCounter++;
         }
         player.makeAGoal();
+
+        System.out.println("GOOOOOOOOOL! Lo hizo " + player.getName() + ". El resultado ahora es: " );
+        System.out.println( this.getMarker());
     }
 
     public void finishMatch(){
@@ -43,6 +46,12 @@ public class Match {
 
     public void startMatch(){
         this.playing = true;
+        for (Player player: this.localTeam.getPlayers()) {
+            player.countMatch();
+        }
+        for (Player player: this.visitantTeam.getPlayers()) {
+            player.countMatch();
+        }
     }
 
     public boolean isPlaying(){

@@ -26,16 +26,13 @@ public class Main {
 
         Date fechaEstimadaParcial = new Date(2022, 8, 29);
         Match primerPartido = new Match("Open Gallo", fechaEstimadaParcial, estudiantesFC, profesoresPOO);
-
         torneoDaVinci.addMatch(primerPartido);
         
         System.out.println(torneoDaVinci);
         System.out.println(primerPartido.getMarker());
 
         primerPartido.makeAGoal(estudiantesFC, estudiantesFC.getPlayers().get(0));
-
-        System.out.println();
-        System.out.println(torneoDaVinci);
-        System.out.println(primerPartido.getMarker());
+        primerPartido.makeAGoal(estudiantesFC, estudiantesFC.getPlayers().get(3));
+        primerPartido.makeAGoal(profesoresPOO, profesoresPOO.getPlayers().get(4));
     }
 }
