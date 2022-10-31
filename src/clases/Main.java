@@ -34,5 +34,6 @@ public class Main {
         primerPartido.makeAGoal(estudiantesFC, estudiantesFC.getPlayers().get(0));
         primerPartido.makeAGoal(estudiantesFC, estudiantesFC.getPlayers().get(3));
         primerPartido.makeAGoal(profesoresPOO, profesoresPOO.getPlayers().get(4));
+        primerPartido.makeAGoal(estudiantesFC, estudiantesFC.getPlayers().get(1));
     }
 }
