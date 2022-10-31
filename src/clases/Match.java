@@ -28,7 +28,13 @@ public class Match {
     }
 
     public void makeAGoal(Team team, Player player){
-        //TODO
+        if(team == localTeam){
+            this.localGoalCounter++;
+        }
+        else if(team == visitantTeam){
+            this.visitantGoalCounter++;
+        }
+        player.makeAGoal();
     }
 
     public void finishMatch(){

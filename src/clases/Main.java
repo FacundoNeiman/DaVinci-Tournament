@@ -31,5 +31,11 @@ public class Main {
         
         System.out.println(torneoDaVinci);
         System.out.println(primerPartido.getMarker());
+
+        primerPartido.makeAGoal(estudiantesFC, estudiantesFC.getPlayers().get(0));
+
+        System.out.println();
+        System.out.println(torneoDaVinci);
+        System.out.println(primerPartido.getMarker());
     }
 }

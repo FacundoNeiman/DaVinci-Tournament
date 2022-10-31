@@ -23,7 +23,9 @@ public class Team {
         player.setTeam(this);
         this.players.add(player);
     }
-
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
     @Override
     public String toString() {
         return "Team{" +

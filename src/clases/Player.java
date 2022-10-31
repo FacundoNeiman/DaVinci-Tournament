@@ -20,6 +20,10 @@ public class Player {
         return;
     }
 
+    public void makeAGoal(){
+        this.goalCounter++;
+    }
+
     public String getName() {
         return this.name;
     }
