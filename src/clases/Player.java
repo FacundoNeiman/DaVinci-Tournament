@@ -2,12 +2,12 @@ package clases;
 
 public class Player {
     private String name;
-    private String position;
+    private Position position;
     private int goalCounter;
     private int matchCounter;
     private Team team;
 
-    public Player(String name, String position, int goalCounter, int matchCounter){
+    public Player(String name, Position position, int goalCounter, int matchCounter) {
         setGoalCounter(goalCounter);
         setMatchCounter(matchCounter);
         setName(name);
@@ -15,16 +15,16 @@ public class Player {
         team = null;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
         return;
     }
 
-    public void makeAGoal(){
+    public void makeAGoal() {
         this.goalCounter++;
     }
 
-    public void countMatch(){
+    public void countMatch() {
         this.matchCounter++;
     }
 
@@ -32,16 +32,15 @@ public class Player {
         return this.name;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
-        return;
     }
 
-    public String getPosition(){
+    public Position getPosition() {
         return this.position;
     }
 
-    public int getGoalCounter(){
+    public int getGoalCounter() {
         return this.goalCounter;
     }
 
@@ -55,25 +54,25 @@ public class Player {
         return;
     }
 
-    public Team getTeam(){
+    public Team getTeam() {
         return this.team;
     }
 
-    public void setTeam(Team team){
+    public void setTeam(Team team) {
         this.team = team;
     }
 
-    public void incrementGoalCounter(){
+    public void incrementGoalCounter() {
         //this.goalCounter = this.goalCounter + 1;
         //this.goalCounter += 1;
         this.goalCounter++;
     }
 
-    public int getMatchCounter(){
+    public int getMatchCounter() {
         return this.matchCounter;
     }
 
-    public void incrementMatchCounter(){
+    public void incrementMatchCounter() {
         this.matchCounter++;
     }
 
