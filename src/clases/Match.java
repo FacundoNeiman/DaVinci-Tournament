@@ -2,107 +2,98 @@ package clases;
 
 import java.util.Date;
 
+//@formatter:on
 public class Match {
     private String location;
     private Date date;
-    private Team localTeam;
-    private Team visitantTeam;
-    private int localGoalCounter;
-    private int visitantGoalCounter;
+    private Marker marker;
     private boolean playing;
 
-    public Match(String location, Date date, Team local, Team visitant){
+    public Match(String location, Date date, Team local, Team visitant) {
+        this.playing = false;
+        this.marker = new Marker(local, visitant);
         setDate(date);
-        setLocalTeam(local);
         setLocation(location);
         setVisitantGoalCounter(0);
         setLocalGoalCounter(0);
-        setVisitantTeam(visitant);
-        this.playing = false;
     }
 
-    public Match(Team local, Team visitant){
-        setLocalTeam(local);
-        setVisitantTeam(visitant);
+    public Match(Team local, Team visitant) {
         this.playing = false;
+        this.marker = new Marker(local, visitant);
     }
 
-    public void makeAGoal(Team team, Player player){
-        if(team == localTeam){
-            this.localGoalCounter++;
-        }
-        else if(team == visitantTeam){
-            this.visitantGoalCounter++;
-        }
+    public String getMarker() {
+        return this.marker.getMarker();
+    }
+
+    public void makeAGoal(Team team, Player player) {
+        marker.makeAGoal(team);
         player.makeAGoal();
-
-        System.out.println("GOOOOOOOOOL! Lo hizo " + player.getName() + ". El resultado ahora es: " );
-        System.out.println( this.getMarker());
+        System.out.println("GOOOOOOOOOL! Lo hizo " + player.getName() + ". El resultado ahora es: ");
+        System.out.println(this.marker.getMarker());
     }
 
-    public void finishMatch(){
-        this.playing= false;
+    public void finishMatch() {
+        this.playing = false;
     }
 
-    public void startMatch(){
+    public void startMatch() {
         this.playing = true;
-        for (Player player: this.localTeam.getPlayers()) {
+        for (Player player : this.marker.getLocal().getPlayers()) {
             player.countMatch();
         }
-        for (Player player: this.visitantTeam.getPlayers()) {
+        for (Player player : this.marker.getVisitant().getPlayers()) {
             player.countMatch();
         }
     }
 
-    public boolean isPlaying(){
+    public boolean isPlaying() {
         return this.playing;
     }
 
-    public String getMarker(){
-        return String.format("%s %d - %d %s",
-                this.localTeam.getName() ,this.getLocalCounter(),
-                this.getVisitantCounter(), this.visitantTeam.getName());
-        //return this.localGoalCounter + " - " + this.visitantGoalCounter;
-    }
-
-    public void setLocation(String location){
+    public void setLocation(String location) {
         this.location = location;
     }
-    public String getLocation(){
+
+    public String getLocation() {
         return this.location;
     }
 
-    public void setDate(Date date){
+    public void setDate(Date date) {
         this.date = date;
     }
-    public Date getdate(){
+
+    public Date getdate() {
         return this.date;
     }
-    public void setLocalTeam(Team localTeam){
-        this.localTeam = localTeam;
-    }
-    public void setVisitantTeam(Team visitantTeam){
-        this.visitantTeam = visitantTeam;
-    }
-    public Team getLocalTeam(){
-        return this.localTeam;
-    }
-    public void incrementLocalCounter(){
-        this.localGoalCounter++;
+
+    public void setLocalTeam(Team localTeam) {
+        this.marker.setLocal(localTeam);
     }
 
-    public int getLocalCounter(){
-        return this.localGoalCounter;
+    public void setVisitantTeam(Team visitantTeam) {
+        this.marker.setVisitant(visitantTeam);
     }
-    public int getVisitantCounter(){
-        return this.visitantGoalCounter;
+
+    public Team getLocalTeam() {
+        return this.marker.getLocal();
+    }
+
+    public int getLocalCounter() {
+        return this.marker.getLocalCounter();
+    }
+
+    public int getVisitantCounter() {
+        return this.marker.getVisitantCounter();
     }
 
     public void setLocalGoalCounter(int localGoalCounter) {
-        this.localGoalCounter = localGoalCounter;
+        this.marker.setLocalCounter(localGoalCounter);
     }
+
     public void setVisitantGoalCounter(int visitantGoalCounter) {
-        this.visitantGoalCounter = visitantGoalCounter;
+        this.marker.setVisitantCounter(visitantGoalCounter);
     }
 
     @Override
@@ -110,10 +101,10 @@ public class Match {
         return "Match{" +
                 "location='" + location + '\'' +
                 ", date=" + date +
-                ", localTeam=" + localTeam +
-                ", visitantTeam=" + visitantTeam +
-                ", localGoalCounter=" + localGoalCounter +
-                ", visitantGoalCounter=" + visitantGoalCounter +
+                ", localTeam=" + marker.getLocal() +
+                ", visitantTeam=" + marker.getVisitant() +
+                ", localGoalCounter=" + marker.getLocalCounter() +
+                ", visitantGoalCounter=" + marker.getVisitantCounter() +
                 '}';
     }
 }
